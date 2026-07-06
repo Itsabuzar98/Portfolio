@@ -2,22 +2,15 @@ name = "portfolio"
 main = "src/worker.js"
 compatibility_date = "2025-06-01"
 
-# Static frontend (public/) served by Workers Assets.
-# run_worker_first lets the Worker stamp security headers + handle /api and /media.
 [assets]
 directory = "./public"
 binding = "ASSETS"
 run_worker_first = true
 
-# --- KV: site content + auth + sessions + rate limits ---
-# Create with:  npx wrangler kv namespace create CONTENT_KV
-# then paste the generated id below.
 [[kv_namespaces]]
-binding = "KV_BINDING"
+binding = "CONTENT_KV"
 id = "f5c18424df1641afac62f9b6c5de0867"
 
-# --- R2: uploaded media (certificates, photos, resume PDFs) ---
-# Create with:  npx wrangler r2 bucket create abuzar-portfolio-media
 [[r2_buckets]]
 binding = "MEDIA"
 bucket_name = "portfolio"
