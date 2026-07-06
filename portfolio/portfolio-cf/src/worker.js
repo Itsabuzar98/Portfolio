@@ -61,11 +61,8 @@ async function handleApi(request, env, url) {
   // ---- public ----
   if (path === '/api/status' && method === 'GET') {
     const setup = !!(await env.CONTENT_KV.get('auth:admin'));
-      return json({
-    setup,
-    hasSetupKey: !!env.SETUP_KEY,
-    keyLength: (env.SETUP_KEY || '').length
-  });
+      return json({ setup }); // never leaks anything else
+  
   }
   if (path === '/api/content' && method === 'GET') {
     const raw = await env.CONTENT_KV.get('site:content');
