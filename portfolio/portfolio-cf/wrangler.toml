@@ -12,10 +12,9 @@ run_worker_first = true
 # --- KV: site content + auth + sessions + rate limits ---
 # Create with:  npx wrangler kv namespace create CONTENT_KV
 # then paste the generated id below.
-"kv_namespaces": [{
-                    "binding": "KV_BINDING",
-                    "id": "f5c18424df1641afac62f9b6c5de0867"
-                 }],
+[[kv_namespaces]]
+binding = "KV_BINDING"
+id = "f5c18424df1641afac62f9b6c5de0867"
 
 # --- R2: uploaded media (certificates, photos, resume PDFs) ---
 # Create with:  npx wrangler r2 bucket create abuzar-portfolio-media
