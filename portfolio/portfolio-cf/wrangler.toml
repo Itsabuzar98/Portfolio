@@ -22,18 +22,17 @@ id = "f5c18424df1641afac62f9b6c5de0867"
 binding = "MEDIA"
 bucket_name = "portfolio"
 
-"observability": {
-    "enabled": false,
-    "head_sampling_rate": 1,
-    "logs": {
-      "enabled": true,
-      "head_sampling_rate": 1,
-      "persist": true,
-      "invocation_logs": true
-    },
-    "traces": {
-      "enabled": true,
-      "persist": true,
-      "head_sampling_rate": 1
-    }
-  }
+[observability]
+enabled = false
+head_sampling_rate = 1
+
+[observability.logs]
+enabled = true
+head_sampling_rate = 1
+persist = true
+invocation_logs = true
+
+[observability.traces]
+enabled = true
+persist = true
+head_sampling_rate = 1
